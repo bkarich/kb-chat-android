@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application android:name="im.vector.app.VectorApplication">
+
+        <!-- Firebase components -->
+        <meta-data
+            android:name="firebase_analytics_collection_deactivated"
+            android:value="true" />
+
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2131366451957046~8768102802"/> -->
+
+        <receiver
+            android:name="im.vector.app.push.fcm.EmbeddedFCMDistributor"
+            android:enabled="true"
+            android:exported="false">
+
+            <intent-filter>
+                <action android:name="org.unifiedpush.android.distributor.REGISTER" />
+                <action android:name="org.unifiedpush.android.distributor.UNREGISTER" />
+            </intent-filter>
+
+        </receiver>
+
+    </application>
+
+</manifest>
